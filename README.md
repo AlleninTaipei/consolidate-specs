@@ -1,6 +1,36 @@
 # consolidate_specs — 多機種規格彙整工具
 
-將多個機種規格 Excel 檔案（`.xlsx` / `.xls`）彙整為一份 Excel，方便比對與管理。
+> 將多個機種規格 Excel 檔案（`.xlsx` / `.xls`）彙整為一份 Excel，方便比對與管理。
+
+跟 Claude Code 的三段對話
+
+```palintext 
+Excel 檔案描述:
+只有一個 Worksheet tab 叫 Specifications
+A 欄位是空白
+B1 是機種名稱 (model name)
+B2 往下 B3,B4...會是規格名稱 (Example: CPU, Chipset...)
+C2 往下 C3,C4...是對應規格的說明
+但並非每個 B 欄位都有資訊, 舉例：
+B21 的內容是 Memory
+C21 = Dual Channel DDR5 Memory Technology
+C22 = 4 x DDR5 DIMM Slots
+有關 Memory 規格的描述一直到 C26 結束
+B22 到 B26 都是空白
+B27 就是下一個規格名稱 Expansion Slot
+以上描述你是否了解 ？
+ 
+有一堆這樣的 Excel 檔案，一個檔案就是一個機種.
+開一個新的 Excel 檔案彙整所有機種:
+新的 Excel 檔案 B1 = "Model", C1 = 該機種名稱,
+將所有舊檔案依序處理到 C,D,E, ... 欄位
+這個用 Python 可以做嗎 ? 做好我要交給 PM 使用.
+困難在於每個舊檔案中相同的規格描述所佔的列數可能不一樣.
+以上描述你是否了解 ？
+ 
+請告訴我該把測試用的 Excel 舊檔案複製到哪個路徑.
+請你檢視一下後再整理一下你的 actions.
+```
 
 ## 功能說明
 
